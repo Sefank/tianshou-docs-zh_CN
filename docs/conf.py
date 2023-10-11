@@ -14,7 +14,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import re
+
 import sphinx_rtd_theme
+from enchant.tokenize import Filter
 
 import tianshou
 
@@ -88,6 +91,15 @@ def setup(app):
 
 
 # -- Extension configuration -------------------------------------------------
+
+class SChineseCharacterFilter(Filter):
+    """Ignore all Simplifed Chinese words.
+    """
+
+    def _skip(self, word):
+        return re.match(r'[\u3400-\u9fff\uf900-\ufffd]+', word)
+
+spelling_filters = [SChineseCharacterFilter]
 
 # -- Options for intersphinx extension ---------------------------------------
 

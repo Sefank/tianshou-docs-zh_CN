@@ -7,10 +7,11 @@ SOURCEDIR     = docs
 BUILDDIR      = _build
 
 preview:
-	@$(SPHINXPREVIEW) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXPREVIEW) -b html --pre-build "$(SPHINXBUILD) -b spelling -W --keep-going "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)" "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 build:
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXBUILD) -b spelling -W --keep-going "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXBUILD) -b html -W --keep-going "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 clean:
 	@rm -rf "$(BUILDDIR)"
