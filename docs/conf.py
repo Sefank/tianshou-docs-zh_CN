@@ -15,9 +15,9 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import re
+import datetime
 
 import sphinx_rtd_theme
-from enchant.tokenize import Filter
 
 import tianshou
 
@@ -27,7 +27,7 @@ version = tianshou.__version__
 # -- Project information -----------------------------------------------------
 
 project = "天授"
-copyright = "2020，天授项目贡献者。"
+copyright = f"{datetime.datetime.now().year}, 天授项目贡献者"
 author = "天授项目贡献者"
 
 # The full version, including alpha/beta/rc tags
@@ -92,14 +92,18 @@ def setup(app):
 
 # -- Extension configuration -------------------------------------------------
 
-class SChineseCharacterFilter(Filter):
-    """Ignore all Simplifed Chinese words.
-    """
+try:
+    from enchant.tokenize import Filter
+    class SChineseCharacterFilter(Filter):
+        """Ignore all Simplifed Chinese words.
+        """
 
-    def _skip(self, word):
-        return re.match(r'[\u3400-\u9fff\uf900-\ufffd]+', word)
+        def _skip(self, word):
+            return re.match(r'[\u3400-\u9fff\uf900-\ufffd]+', word)
 
-spelling_filters = [SChineseCharacterFilter]
+    spelling_filters = [SChineseCharacterFilter]
+except ImportError:
+    pass
 
 # -- Options for intersphinx extension ---------------------------------------
 

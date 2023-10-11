@@ -2,13 +2,10 @@ tianshou
 numba
 numpy>=1.20
 sphinx<7
-sphinx-autobuild
 sphinxcontrib-bibtex
-sphinxcontrib-spelling>=8.0.0, <9.0.0
 sphinx_rtd_theme>=0.5.1
 tensorboard
 torch
 tqdm
 protobuf
 pettingzoo
-wandb=0.12

@@ -18,4 +18,4 @@ dependencies:
     - tensorboard
     - tqdm
     - protobuf
-    - wandb=0.12
+    - wandb~=0.12.0
