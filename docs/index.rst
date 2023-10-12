@@ -4,10 +4,14 @@
    contain the root `toctree` directive.
 
 
-Welcome to Tianshou!
+欢迎使用天授！
 ====================
 
-**Tianshou** (`天授 <https://baike.baidu.com/item/%E5%A4%A9%E6%8E%88>`_) is a reinforcement learning platform based on pure PyTorch. Unlike existing reinforcement learning libraries, which are mainly based on TensorFlow, have many nested classes, unfriendly API, or slow-speed, Tianshou provides a fast-speed framework and pythonic API for building the deep reinforcement learning agent. The supported interface algorithms include:
+`天授 <https://baike.baidu.com/item/%E5%A4%A9%E6%8E%88>`_ (tianshou) 是一个基于 PyTorch 的深度强化学习框架。\
+现有的强化学习库主要基于 TensorFlow、类嵌套繁杂，API 不友好、速度很慢，而天授则与之不同，其提供了一个快速的框架以及 Python 风格的 API 来\
+构建深度强化学习智能体。
+
+目前，支持的接口算法有：
 
 * :class:`~tianshou.policy.DQNPolicy` `Deep Q-Network <https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf>`_
 * :class:`~tianshou.policy.DQNPolicy` `Double DQN <https://arxiv.org/pdf/1509.06461.pdf>`_
